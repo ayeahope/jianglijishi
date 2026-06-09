@@ -1,0 +1,69 @@
+.title {
+  color: #101318;
+  font-size: 42rpx;
+  font-weight: 800;
+}
+
+.panel {
+  margin-top: 24rpx;
+  padding: 24rpx;
+  background: #ffffff;
+  border: 1rpx solid #ddd8cf;
+  border-radius: 8rpx;
+}
+
+.field {
+  display: grid;
+  grid-template-columns: 180rpx 1fr;
+  align-items: center;
+  gap: 16rpx;
+  min-height: 72rpx;
+  border-top: 1rpx solid #eee9df;
+}
+
+.field:first-of-type {
+  border-top: none;
+}
+
+.picker-value,
+.text-input,
+.number-input {
+  min-height: 56rpx;
+  box-sizing: border-box;
+  padding: 0 16rpx;
+  background: #f8f6f0;
+  border: 1rpx solid #d6d2ca;
+  border-radius: 8rpx;
+  line-height: 56rpx;
+}
+
+.number-input {
+  text-align: right;
+}
+
+.survivor-edit {
+  margin-top: 20rpx;
+  padding: 18rpx;
+  background: #fbfaf6;
+  border: 1rpx solid #eee9df;
+  border-radius: 8rpx;
+}
+
+.row-head {
+  margin-bottom: 8rpx;
+  color: #303640;
+  font-weight: 800;
+}
+
+.actions {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 14rpx;
+  margin-top: 24rpx;
+  padding-bottom: 30rpx;
+}
+
+.actions button {
+  height: 72rpx;
+  line-height: 72rpx;
+}

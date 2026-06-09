@@ -1,0 +1,83 @@
+.title {
+  color: #101318;
+  font-size: 42rpx;
+  font-weight: 800;
+}
+
+.empty {
+  margin-top: 28rpx;
+  padding: 28rpx;
+  background: #ffffff;
+  border: 1rpx solid #ddd8cf;
+  border-radius: 8rpx;
+  color: #68707c;
+  line-height: 1.6;
+}
+
+.report-item {
+  margin-top: 22rpx;
+  padding: 22rpx;
+  background: #ffffff;
+  border: 1rpx solid #ddd8cf;
+  border-radius: 8rpx;
+}
+
+.report-head {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 14rpx;
+}
+
+.report-title {
+  font-size: 30rpx;
+  font-weight: 800;
+}
+
+.badge {
+  flex: 0 0 auto;
+  min-width: 76rpx;
+  height: 44rpx;
+  padding: 0 12rpx;
+  border-radius: 999rpx;
+  color: #ffffff;
+  font-size: 24rpx;
+  font-weight: 800;
+  line-height: 44rpx;
+  text-align: center;
+}
+
+.badge.ok {
+  background: #2e8a5c;
+}
+
+.badge.bad {
+  background: #b53838;
+}
+
+.detail-grid {
+  margin-top: 16rpx;
+}
+
+.detail-row {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr 1fr;
+  gap: 12rpx;
+  padding: 14rpx 0;
+  border-top: 1rpx solid #eee9df;
+  font-size: 24rpx;
+}
+
+.person {
+  display: flex;
+  flex-direction: column;
+  gap: 4rpx;
+}
+
+.name {
+  font-weight: 800;
+}
+
+.row-bad {
+  color: #7e2424;
+}

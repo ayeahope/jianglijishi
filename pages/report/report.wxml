@@ -1,0 +1,29 @@
+<view class="page report-page">
+  <view class="title">练习战报</view>
+  <view class="muted">最近的题目在最上方，记录随机电荷、攻击和你的答案。</view>
+
+  <view wx:if="{{!items.length}}" class="empty">
+    还没有战报。去练习页提交一次判定后会出现在这里。
+  </view>
+
+  <view wx:for="{{items}}" wx:key="id" class="report-item">
+    <view class="report-head">
+      <view>
+        <view class="report-title">第 {{item.number}} 题：{{item.targetName}} {{item.attackLabel}}</view>
+        <view class="muted">{{item.summary}}</view>
+      </view>
+      <view class="badge {{item.correct ? 'ok' : 'bad'}}">{{item.correct ? "全对" : "有误"}}</view>
+    </view>
+
+    <view class="detail-grid">
+      <view wx:for="{{item.rows}}" wx:key="id" class="detail-row {{item.correct ? 'row-ok' : 'row-bad'}}">
+        <view class="person">
+          <text class="name">{{item.name}}</text>
+          <text class="muted">{{item.chargeLabel}}</text>
+        </view>
+        <view>答：{{item.userStatus}} {{item.userHealth}}</view>
+        <view>正：{{item.standardStatus}} {{item.standardHealth}}</view>
+      </view>
+    </view>
+  </view>
+</view>

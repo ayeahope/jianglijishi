@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <title>隐士血量练习</title>
+    <link rel="stylesheet" href="./web/styles.css" />
+  </head>
+  <body>
+    <main class="app">
+      <header class="app-header">
+        <div>
+          <h1>隐士血量练习</h1>
+          <p>随机电荷、随机攻击，填写状态和血量后立即判定。</p>
+        </div>
+        <button class="icon-button" id="resetHealthBtn" type="button" title="重置血量">↺</button>
+      </header>
+
+      <nav class="tabs" aria-label="页面">
+        <button class="tab active" type="button" data-view="practice">练习</button>
+        <button class="tab" type="button" data-view="report">战报</button>
+        <button class="tab" type="button" data-view="config">配置</button>
+      </nav>
+
+      <section class="view active" id="practiceView">
+        <section class="prompt">
+          <div>
+            <div class="eyebrow" id="questionNumber">准备开始</div>
+            <div class="attack" id="attackPrompt">当前队伍 4 人</div>
+            <p id="promptHint">点击出题后，系统会隐藏结算结果。</p>
+          </div>
+          <button class="primary wide" id="newQuestionBtn" type="button">开始出题</button>
+        </section>
+
+        <h2>求生者</h2>
+        <section class="survivor-grid" id="survivorGrid"></section>
+
+        <section class="answer-sheet hidden" id="answerSheet">
+          <div class="sheet-head">
+            <h2>填写攻击后的状态</h2>
+            <span id="answerProgress">0/4</span>
+          </div>
+          <div id="answerRows"></div>
+          <div class="action-row">
+            <button class="primary" id="submitAnswerBtn" type="button">提交判定</button>
+            <button class="secondary" data-view-button="report" type="button">看战报</button>
+          </div>
+        </section>
+      </section>
+
+      <section class="view" id="reportView">
+        <div class="section-head">
+          <div>
+            <h2>练习战报</h2>
+            <p>最近题目在最上方。</p>
+          </div>
+          <button class="ghost" id="clearReportBtn" type="button">清空</button>
+        </div>
+        <div id="reportList"></div>
+      </section>
+
+      <section class="view" id="configView">
+        <div class="section-head">
+          <div>
+            <h2>练习配置</h2>
+            <p>保存在当前浏览器本地。</p>
+          </div>
+          <button class="primary" id="saveConfigBtn" type="button">保存</button>
+        </div>
+
+        <section class="config-panel">
+          <label>
+            <span>求生者数量</span>
+            <select id="survivorCountInput">
+              <option value="1">1 人</option>
+              <option value="2">2 人</option>
+              <option value="3">3 人</option>
+              <option value="4">4 人</option>
+            </select>
+          </label>
+          <label>
+            <span>普攻伤害</span>
+            <input id="normalDamageInput" type="number" min="0" step="0.1" />
+          </label>
+          <label>
+            <span>震慑伤害</span>
+            <input id="terrorShockDamageInput" type="number" min="0" step="0.1" />
+          </label>
+          <label>
+            <span>血量粒度</span>
+            <input id="healthStepInput" type="number" min="0.1" step="0.1" />
+          </label>
+          <label>
+            <span>默认满血</span>
+            <input id="defaultMaxHealthInput" type="number" min="0.1" step="0.1" />
+          </label>
+        </section>
+
+        <h2>队伍</h2>
+        <section id="teamConfig"></section>
+      </section>
+    </main>
+
+    <script src="./utils/calculator.js"></script>
+    <script src="./web/app.js"></script>
+  </body>
+</html>

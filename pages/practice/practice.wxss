@@ -1,0 +1,199 @@
+.practice-page {
+  padding-bottom: 44rpx;
+}
+
+.topbar {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 20rpx;
+}
+
+.title {
+  color: #101318;
+  font-size: 42rpx;
+  font-weight: 800;
+  line-height: 1.2;
+}
+
+.small-btn {
+  width: 132rpx;
+  height: 64rpx;
+  margin: 0;
+  padding: 0;
+  font-size: 26rpx;
+  line-height: 64rpx;
+}
+
+.prompt-panel {
+  margin-top: 26rpx;
+  padding: 28rpx;
+  background: #ffffff;
+  border: 1rpx solid #ddd8cf;
+  border-radius: 8rpx;
+}
+
+.question-line {
+  font-size: 28rpx;
+  font-weight: 700;
+}
+
+.attack-line {
+  margin: 10rpx 0;
+  color: #ad3636;
+  font-size: 38rpx;
+  font-weight: 800;
+}
+
+.action-btn {
+  width: 100%;
+  height: 76rpx;
+  margin-top: 24rpx;
+  line-height: 76rpx;
+}
+
+.survivor-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16rpx;
+}
+
+.survivor-card {
+  min-height: 260rpx;
+  box-sizing: border-box;
+  padding: 20rpx;
+  background: #ffffff;
+  border: 2rpx solid #ddd8cf;
+  border-radius: 8rpx;
+}
+
+.survivor-card.correct {
+  border-color: #2e8a5c;
+}
+
+.survivor-card.wrong {
+  border-color: #b53838;
+}
+
+.card-head {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 12rpx;
+}
+
+.survivor-name {
+  font-weight: 800;
+}
+
+.health-visual {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 92rpx;
+  margin: 18rpx 0;
+  border-radius: 8rpx;
+  color: #ffffff;
+  font-size: 30rpx;
+  font-weight: 800;
+}
+
+.status-question {
+  background: #303640;
+}
+
+.status-healthy {
+  background: #2e8a5c;
+}
+
+.status-injured {
+  background: #b97a25;
+}
+
+.status-downed {
+  background: #343941;
+}
+
+.health-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-weight: 700;
+}
+
+.result-text {
+  margin-top: 12rpx;
+  color: #303640;
+  font-size: 24rpx;
+  line-height: 1.4;
+}
+
+.answer-sheet {
+  margin-top: 28rpx;
+  padding: 24rpx;
+  background: #ffffff;
+  border: 1rpx solid #ddd8cf;
+  border-radius: 8rpx;
+}
+
+.sheet-title {
+  margin-bottom: 16rpx;
+  font-size: 30rpx;
+  font-weight: 800;
+}
+
+.answer-row {
+  display: grid;
+  grid-template-columns: 112rpx 1fr 120rpx;
+  align-items: center;
+  gap: 12rpx;
+  padding: 14rpx 0;
+  border-top: 1rpx solid #eee9df;
+}
+
+.answer-name {
+  font-weight: 700;
+}
+
+.status-tabs {
+  display: flex;
+  gap: 8rpx;
+}
+
+.status-btn {
+  width: 92rpx;
+  height: 56rpx;
+  margin: 0;
+  padding: 0;
+  background: #f2f0ea;
+  color: #303640;
+  font-size: 24rpx;
+  line-height: 56rpx;
+}
+
+.status-btn.selected {
+  background: #303640;
+  color: #ffffff;
+}
+
+.health-input {
+  width: 120rpx;
+  height: 56rpx;
+  padding: 0 12rpx;
+  background: #f8f6f0;
+  border: 1rpx solid #d6d2ca;
+  border-radius: 8rpx;
+  text-align: center;
+}
+
+.sheet-actions {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14rpx;
+  margin-top: 22rpx;
+}
+
+.submit-btn {
+  height: 72rpx;
+  line-height: 72rpx;
+}

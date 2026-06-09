@@ -1,0 +1,72 @@
+<view class="page practice-page">
+  <view class="topbar">
+    <view>
+      <view class="title">隐士血量练习</view>
+      <view class="muted">随机电荷、随机攻击，提交后立即判定</view>
+    </view>
+    <button class="ghost small-btn" bindtap="goConfig">配置</button>
+  </view>
+
+  <view class="prompt-panel">
+    <view wx:if="{{currentQuestion}}">
+      <view class="question-line">第 {{currentQuestion.number}} 题</view>
+      <view class="attack-line">{{targetName}} 将受到 {{attackLabel}}</view>
+      <view class="muted">先根据电荷和伤害心算，再填写每名求生者的结果。</view>
+    </view>
+    <view wx:else>
+      <view class="question-line">准备开始</view>
+      <view class="muted">当前队伍 {{survivors.length}} 人，点击出题后隐藏结算结果。</view>
+    </view>
+    <button class="primary action-btn" bindtap="createQuestion">{{currentQuestion ? "换一题" : "开始出题"}}</button>
+  </view>
+
+  <view class="section-title">求生者</view>
+  <view class="survivor-grid">
+    <view wx:for="{{survivorCards}}" wx:key="id" class="survivor-card {{item.resultClass}}">
+      <view class="card-head">
+        <view>
+          <view class="survivor-name">{{item.name}}</view>
+          <view class="muted">{{item.role}}</view>
+        </view>
+        <view class="pill {{item.chargeClass}}">{{item.chargeLabel}}</view>
+      </view>
+      <view class="health-visual {{item.statusClass}}">{{item.displayStatus}}</view>
+      <view class="health-row">
+        <text class="muted">当前</text>
+        <text>{{item.displayHealth}}</text>
+      </view>
+      <view wx:if="{{result}}" class="result-text">{{item.resultText}}</view>
+    </view>
+  </view>
+
+  <view wx:if="{{currentQuestion}}" class="answer-sheet">
+    <view class="sheet-title">填写攻击后的状态</view>
+    <view wx:for="{{answerRows}}" wx:key="id" class="answer-row">
+      <view class="answer-name">{{item.name}}</view>
+      <view class="status-tabs">
+        <button
+          wx:for="{{statusOptions}}"
+          wx:for-item="status"
+          wx:key="key"
+          size="mini"
+          class="status-btn {{item.status === status.key ? 'selected' : ''}}"
+          data-id="{{item.id}}"
+          data-status="{{status.key}}"
+          bindtap="selectStatus"
+        >{{status.label}}</button>
+      </view>
+      <input
+        class="health-input"
+        type="digit"
+        value="{{item.health}}"
+        data-id="{{item.id}}"
+        bindinput="changeHealth"
+        placeholder="血量"
+      />
+    </view>
+    <view class="sheet-actions">
+      <button class="primary submit-btn" bindtap="submitAnswer">提交判定</button>
+      <button class="secondary submit-btn" bindtap="goReport">看战报</button>
+    </view>
+  </view>
+</view>

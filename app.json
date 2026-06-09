@@ -1,0 +1,35 @@
+{
+  "pages": [
+    "pages/practice/practice",
+    "pages/report/report",
+    "pages/config/config"
+  ],
+  "window": {
+    "navigationBarTitleText": "隐士血量练习",
+    "navigationBarBackgroundColor": "#101318",
+    "navigationBarTextStyle": "white",
+    "backgroundColor": "#f5f3ee"
+  },
+  "tabBar": {
+    "color": "#68707c",
+    "selectedColor": "#ad3636",
+    "backgroundColor": "#ffffff",
+    "borderStyle": "black",
+    "list": [
+      {
+        "pagePath": "pages/practice/practice",
+        "text": "练习"
+      },
+      {
+        "pagePath": "pages/report/report",
+        "text": "战报"
+      },
+      {
+        "pagePath": "pages/config/config",
+        "text": "配置"
+      }
+    ]
+  },
+  "style": "v2",
+  "sitemapLocation": "sitemap.json"
+}

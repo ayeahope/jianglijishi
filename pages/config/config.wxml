@@ -1,0 +1,59 @@
+<view class="page config-page">
+  <view class="title">练习配置</view>
+  <view class="muted">修改会保存到本机，并影响之后生成的新题。</view>
+
+  <view class="panel">
+    <view class="section-title">基础规则</view>
+    <view class="field">
+      <text>求生者数量</text>
+      <picker mode="selector" range="{{countOptions}}" value="{{countIndex}}" bindchange="changeCount">
+        <view class="picker-value">{{config.survivorCount}} 人</view>
+      </picker>
+    </view>
+    <view class="field">
+      <text>普攻伤害</text>
+      <input class="number-input" type="digit" value="{{config.normalDamage}}" data-key="normalDamage" bindinput="changeConfigNumber" />
+    </view>
+    <view class="field">
+      <text>震慑伤害</text>
+      <input class="number-input" type="digit" value="{{config.terrorShockDamage}}" data-key="terrorShockDamage" bindinput="changeConfigNumber" />
+    </view>
+    <view class="field">
+      <text>血量粒度</text>
+      <input class="number-input" type="digit" value="{{config.healthStep}}" data-key="healthStep" bindinput="changeConfigNumber" />
+    </view>
+    <view class="field">
+      <text>默认满血</text>
+      <input class="number-input" type="digit" value="{{config.defaultMaxHealth}}" data-key="defaultMaxHealth" bindinput="changeConfigNumber" />
+    </view>
+  </view>
+
+  <view class="panel">
+    <view class="section-title">队伍</view>
+    <view wx:for="{{survivors}}" wx:key="id" class="survivor-edit">
+      <view class="row-head">槽位 {{index + 1}}</view>
+      <view class="field">
+        <text>名称</text>
+        <input class="text-input" value="{{item.name}}" data-index="{{index}}" data-key="name" bindinput="changeSurvivorText" />
+      </view>
+      <view class="field">
+        <text>角色</text>
+        <input class="text-input" value="{{item.role}}" data-index="{{index}}" data-key="role" bindinput="changeSurvivorText" />
+      </view>
+      <view class="field">
+        <text>最大血量</text>
+        <input class="number-input" type="digit" value="{{item.maxHealth}}" data-index="{{index}}" data-key="maxHealth" bindinput="changeSurvivorNumber" />
+      </view>
+      <view class="field">
+        <text>当前血量</text>
+        <input class="number-input" type="digit" value="{{item.currentHealth}}" data-index="{{index}}" data-key="currentHealth" bindinput="changeSurvivorNumber" />
+      </view>
+    </view>
+  </view>
+
+  <view class="actions">
+    <button class="primary" bindtap="save">保存配置</button>
+    <button class="ghost" bindtap="resetHealth">重置血量</button>
+    <button class="secondary" bindtap="clearReport">清空战报</button>
+  </view>
+</view>
